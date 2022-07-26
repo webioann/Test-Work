@@ -1,0 +1,40 @@
+@import './index.scss';
+
+.switch-box{
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    .switch{
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 700;
+        color: $text-light;
+        padding-bottom: 5px;
+    }
+    .active{
+        color: $green;
+        transition: color 200ms linear 100ms;
+    }
+    .bottom-border{
+        width: 60px;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        background-color: $green;
+        transition: margin 200ms ease;
+    }
+}
+@media (min-width: 576px) {
+    .lang-button{
+        position: relative;
+        left: 0;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+

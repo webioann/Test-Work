@@ -1,0 +1,59 @@
+/* ===================  VARIABLES  ================*/
+
+$font-main: "Rubik", sans-serif;
+$font-second: "Roboto", sans-serif;
+$font-three: "Nunito", sans-serif;
+
+$color-dark: #474747;
+$color-light: #ffffff;
+$navbar-bg-lt: rgba( 0, 0, 0, 0.5 );
+$navbar-bg-dk: rgba( 255, 255, 255, 0.3 );
+$text-dark: #212529;
+$text-light: #ffffff;
+$carrot: #f85904;
+
+$shadow-lt: 0px 0px 6px rgba(0,0,0,0.3);
+$shadow-dk:  0px 0px 6px rgba(255,255,255,0.3);
+// $shadow-big-lt: 0px 0px 10px rgba(0,0,0,0.3);
+// $shadow-big-dk:  0px 0px 10px rgba(255,255,255,0.3);
+
+$bg-dark: #1d1d1d;
+$dk-contr: #f85904;
+// $green: #08fdd8;
+$green: #f85904;
+$grey: #262626;
+
+/*==========================TOTALL STYLES=====================*/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Rubik:wght@400;500;600&display=swap');
+body,
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    font-family: $font-main;
+    min-height: 100%;
+    font-weight: 400;
+    color: $color-dark;
+    width: 100%;
+    min-height: 100vh;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+//======= GLOBAL CLASSES ==================
