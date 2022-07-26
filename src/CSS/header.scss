@@ -1,0 +1,9 @@
+@import './index.scss';
+
+header{
+    margin-top: 1rem;
+    min-height: 80px;
+    box-shadow: $shadow;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
