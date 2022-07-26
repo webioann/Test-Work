@@ -1,14 +1,12 @@
-import React, {  useState, useEffect} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import ExchangeRate from './ExchangeRate'
+import React from 'react'
 import '../CSS/header.scss'
 
-const Header = () => {
+const Header = ({ children }) => {
 
     return (
         <header>
             <h2 className='logo'>Currency converter</h2>
-            <ExchangeRate/>
+            { children }
         </header>
     )
 }

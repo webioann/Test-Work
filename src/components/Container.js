@@ -1,12 +1,12 @@
-import React,{ useState } from "react";
+import React from "react";
 import "../CSS/container.scss";
 
-function Container(props) {
+const  Container = ({ children }) => {
 
     return (
         <div id='top' className='container-fluid'>
             <div className='container'>
-                {props.children}
+                {children}
             </div>
         </div>
     );

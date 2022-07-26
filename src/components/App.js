@@ -1,11 +1,12 @@
-import React,{ useState,useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React,{ useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import Container from './Container.js'
 import Header from './Header.js'
 import Converter from './Converter.js'
+import ExchangeRate from './ExchangeRate'
+import Wrapper from './Wrapper.js'
 import { useFetchCurrencyQuery } from '../Redux-toolkit/currencyApi'
 import { setBuyUsd, setBuyEur, setSaleUsd, setSaleEur } from '../Redux-toolkit/reduxSlice'
-
 
 const App = () => {
 
@@ -30,8 +31,12 @@ const App = () => {
 
   return (
     <Container>
-      <Header/>
-      <Converter/>
+      <Wrapper>
+        <Header>
+          <ExchangeRate/>
+        </Header>
+        <Converter/>
+      </Wrapper>
     </Container>
   )
 }

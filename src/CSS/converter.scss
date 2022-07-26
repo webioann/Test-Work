@@ -3,33 +3,27 @@
 .converter{
     margin-top: 1rem;
     width: 100%;
-    min-height: 80px;
-    box-shadow: $shadow;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     form{
-        width: 290px;
+        width: 280px;
+        display: flex;
         box-shadow: $shadow;
         border-radius: 5px;
         padding: 5px;
         input{
             padding: 5px 10px;
         }
-    }
-}
-@media (min-width: 640px) {
-    .converter{
-        flex-direction: row;
-        justify-content: center;
-        .result{
-            margin-left: 1rem;
+        select{
+            padding: 5px 10px;
+            outline: none;
+            // appearance: none;
+            border-bottom: 1px solid $color-dark;
         }
     }
-}
-@media (min-width: 1200px) {
-    .converter{
-        border-radius: 0.5rem;
+    .result{
+        margin-top: 1rem;
     }
 }

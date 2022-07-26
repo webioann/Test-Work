@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import { useConveter } from '../hooks/useConveter'
 import '../CSS/converter.scss'
 
 const  Converter = () => {
 
     const [enter_value,setEnterValue] = useState('')
-    const [result_value,setResultValue] = useState(0)
     const [enter_currency,setEC] = useState('UAH')
     const [result_currency,setRC] = useState('UAH')
+    const converted = useConveter(enter_value, enter_currency, result_currency)
 
     return (
         <div className='converter'>
@@ -26,7 +27,8 @@ const  Converter = () => {
             </form>
             <form className='result'>
                 <input
-                    value={result_value}
+                    value={converted}
+                    disabled={true}
                     type='text'/>
                 <select 
                     onChange={e => setRC(e.target.value)}
