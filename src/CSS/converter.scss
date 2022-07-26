@@ -1,6 +1,6 @@
 @import './index.scss';
 
-header{
+.converter{
     margin-top: 1rem;
     width: 100%;
     min-height: 80px;
@@ -9,22 +9,27 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    .logo{
-        margin-bottom: 1rem;
+    form{
+        width: 290px;
+        box-shadow: $shadow;
+        border-radius: 5px;
+        padding: 5px;
+        input{
+            padding: 5px 10px;
+        }
     }
 }
 @media (min-width: 640px) {
-    header{
+    .converter{
         flex-direction: row;
-        align-items: start;
-        .logo{
-            flex: 1 1 auto;
-            margin-bottom: 0;
+        justify-content: center;
+        .result{
+            margin-left: 1rem;
         }
     }
 }
 @media (min-width: 1200px) {
-    header{
+    .converter{
         border-radius: 0.5rem;
     }
 }

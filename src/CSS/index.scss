@@ -36,7 +36,18 @@ body,
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+input,select{
+    outline: none;
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+// select{
+//     appearance: none;
+// }
 
 html,
 body {
