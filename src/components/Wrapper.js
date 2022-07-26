@@ -1,5 +1,5 @@
-import React from 'react'
-import '../CSS/wrapper.scss'
+import React from 'react';
+import '../CSS/wrapper.scss';
 
 const Wrapper = ({ children }) => {
     return (
@@ -9,4 +9,4 @@ const Wrapper = ({ children }) => {
     )
 }
 
-export default Wrapper
+export default Wrapper;

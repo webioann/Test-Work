@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-export const useConveter = (enter_value, enter_currency, result_currency) => {
+export const useConverter = (enter_value, enter_currency, result_currency) => {
 
     const [converted,setConverted] = useState(0)
     const {usd_buy, eur_buy, usd_sale, eur_sale} = useSelector(state => state.redux)

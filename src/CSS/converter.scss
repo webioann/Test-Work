@@ -2,28 +2,41 @@
 
 .converter{
     margin-top: 1rem;
-    width: 100%;
-    padding: 0.5rem 1rem;
+    width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     form{
-        width: 280px;
         display: flex;
-        box-shadow: $shadow;
-        border-radius: 5px;
-        padding: 5px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.5rem 0;
         input{
+            max-width: 60%;
             padding: 5px 10px;
+            font-weight: 600;
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: $shadow;
+            border-radius: 5px;
         }
         select{
             padding: 5px 10px;
             outline: none;
-            // appearance: none;
-            border-bottom: 1px solid $color-dark;
+            font-weight: 600;
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: $shadow;
+            border-radius: 5px;
+            margin-left: 1rem;
         }
     }
-    .result{
-        margin-top: 1rem;
+    .arrows{
+        position: absolute;
+        top: 55px;
+        left: 165px;
+        font-size: 2.7rem;
+        opacity: 0.2;
     }
 }

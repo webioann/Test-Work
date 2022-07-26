@@ -1,6 +1,6 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import '../CSS/exchange-rate.scss'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import '../CSS/exchange-rate.scss';
 
 const ExchangeRate = () => {
 
@@ -21,9 +21,8 @@ const ExchangeRate = () => {
                 <p>{ eur_buy.toFixed(2) }</p>
                 <p>{ eur_sale.toFixed(2) }</p>
             </div>
-
         </section>
     )
 }
 
-export default ExchangeRate
+export default ExchangeRate;

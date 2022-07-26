@@ -1,14 +1,21 @@
-import React from 'react'
-import '../CSS/header.scss'
+import React from 'react';
+import '../CSS/header.scss';
 
 const Header = ({ children }) => {
 
+    const dataIso = new Date();
+    const today = dataIso.toLocaleString('ru-RU', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric' 
+    })
+    
     return (
         <header>
-            <h2 className='logo'>Currency converter</h2>
+            <h3 className='rate'>курс валют на {today}</h3>
             { children }
         </header>
     )
 }
 
-export default Header
+export default Header;
