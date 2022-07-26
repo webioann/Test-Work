@@ -6,4 +6,16 @@ header{
     box-shadow: $shadow;
     border-radius: 0.5rem;
     padding: 1rem;
+    display: flex;
+    table{
+        .currency{
+            
+            td{
+                padding: 5px 10px;
+                text-align: center;
+                border-bottom: 1px solid #000;
+            }
+    
+        }
+    }
 }
