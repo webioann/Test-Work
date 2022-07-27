@@ -47,4 +47,4 @@ export const useConverter = (enter_value, enter_currency, result_currency) => {
     }, [enter_value, enter_currency, result_currency])
 
     return converted
-}
+};

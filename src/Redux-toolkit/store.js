@@ -9,4 +9,4 @@ export default configureStore({
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(currencyApi.middleware),
 
-})
+});

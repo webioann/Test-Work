@@ -15,8 +15,6 @@ export const reduxSlice = createSlice({
         setSaleEur: (state,actions) => { state.eur_sale = actions.payload },
     }
 })
-export const { 
-    setBuyUsd, setBuyEur, setSaleUsd, setSaleEur
-} = reduxSlice.actions
+export const { setBuyUsd, setBuyEur, setSaleUsd, setSaleEur } = reduxSlice.actions
 
 export default reduxSlice.reducer;

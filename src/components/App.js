@@ -12,7 +12,6 @@ const App = () => {
 
   const { data=[], isLoading } = useFetchCurrencyQuery()
   const dispatch = useDispatch()
-  console.log(`data -> ${JSON.stringify(data)}`)
 
   useEffect(() => {
     if( !isLoading ) {

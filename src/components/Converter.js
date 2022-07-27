@@ -10,10 +10,14 @@ const  Converter = () => {
     const [result_currency,setRC] = useState('USD')
     const converted = useConverter(enter_value, enter_currency, result_currency)
 
+    const submit = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <div className='converter'>
             <h3 className='title'>конвертер валют</h3>
-            <form className='enter'>
+            <form className='enter' onSubmit={submit}>
                 <input
                     onChange={e => {setEnterValue(e.target.value)}}
                     value={enter_value}
@@ -28,7 +32,7 @@ const  Converter = () => {
                 </select>
             </form>
             <TbArrowsDownUp className='arrows'/>
-            <form className='result'>
+            <form className='result' onSubmit={submit}>
                 <input
                     value={converted}
                     disabled={true}
