@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import reduxSlice from './reduxSlice'
-import { currencyApi } from './currencyApi'
+import { serverApi } from './serverApi'
 
 export default configureStore({
     reducer: {
         redux: reduxSlice,
-        [currencyApi.reducerPath]: currencyApi.reducer
+        [serverApi.reducerPath]: serverApi.reducer
     },
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(currencyApi.middleware),
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(serverApi.middleware),
 
 });

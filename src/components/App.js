@@ -1,40 +1,43 @@
 import React,{ useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Container from './Container.js';
-import Header from './Header.js';
-import Converter from './Converter.js';
-import ExchangeRate from './ExchangeRate';
-import Wrapper from './Wrapper.js';
-import { useFetchCurrencyQuery } from '../Redux-toolkit/currencyApi';
-import { setBuyUsd, setBuyEur, setSaleUsd, setSaleEur } from '../Redux-toolkit/reduxSlice';
+import { useLazyFetchServerDataQuery } from '../Redux-toolkit/serverApi'
+import { setPageNamber } from '../Redux-toolkit/reduxSlice.js';
+import '../CSS/app.scss'
 
 const App = () => {
 
-  const { data=[], isLoading } = useFetchCurrencyQuery()
+  const [ setPege,{ data=[] }] = useLazyFetchServerDataQuery()
   const dispatch = useDispatch()
+  const pageNamber = useSelector(state => state.redux.page)
 
   useEffect(() => {
-    if( !isLoading ) {
-      data.map(curr => {
-        if(curr.ccy === "USD") {
-          dispatch(setBuyUsd(Number(curr.buy)))
-          dispatch(setSaleUsd(Number(curr.sale)))
-        }
-        if(curr.ccy === "EUR") {
-          dispatch(setBuyEur(Number(curr.buy)))
-          dispatch(setSaleEur(Number(curr.sale)))
-        }
-      })
-    }
-  }, [data])
+    setPege(pageNamber)
+  }, [pageNamber])
 
   return (
     <Container>
-      <Wrapper>
-        <Header/>
-        <ExchangeRate/>
-        <Converter/>
-      </Wrapper>
+      <h1 className='header'>Test work by Alexander Veles</h1>
+      <ul className='users-list'>
+        {data.map(user => (
+          <li className='user' key={user.id}>
+            <div className="avatar">
+              <img src={user.avatar} alt="user avatar"/>
+            </div>
+            <h3 className="name">
+                {user.first_name} {user.last_name}
+            </h3>
+            <div className='email-box'>
+              <p className="email-label">Email:</p>
+              <p className="email">{user.email}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className='pagination'>
+        <span onClick={() => dispatch(setPageNamber(1))}>1</span>
+        <span onClick={() => dispatch(setPageNamber(2))}>2</span>
+      </div>
     </Container>
   )
 }
