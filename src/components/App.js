@@ -1,19 +1,19 @@
-import React,{ useEffect } from 'react';
+import React,{ useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { setPageNamber } from '../Redux-toolkit/reduxSlice.js';
 import Container from './Container.js';
 import { useLazyFetchServerDataQuery } from '../Redux-toolkit/serverApi'
-import { setPageNamber } from '../Redux-toolkit/reduxSlice.js';
 import '../CSS/app.scss'
 
 const App = () => {
 
-  const [ setPege,{ data=[] }] = useLazyFetchServerDataQuery()
   const dispatch = useDispatch()
-  const pageNamber = useSelector(state => state.redux.page)
+  const pageNumber = useSelector(state => state.redux.page)
+  const [setPege, { data=[] }] = useLazyFetchServerDataQuery(1)
 
   useEffect(() => {
-    setPege(pageNamber)
-  }, [pageNamber])
+    pageNumber !== null ? setPege(pageNumber) : setPege(1)
+  }, [pageNumber])
 
   return (
     <Container>
@@ -22,14 +22,14 @@ const App = () => {
         {data.map(user => (
           <li className='user' key={user.id}>
             <div className="avatar">
-              <img src={user.avatar} alt="user avatar"/>
+                <img src={user.avatar} alt="user avatar"/>
             </div>
             <h3 className="name">
                 {user.first_name} {user.last_name}
             </h3>
             <div className='email-box'>
-              <p className="email-label">Email:</p>
-              <p className="email">{user.email}</p>
+                <p className="email-label">Email:</p>
+                <p className="email">{user.email}</p>
             </div>
           </li>
         ))}
@@ -41,6 +41,5 @@ const App = () => {
     </Container>
   )
 }
-
 export default App;
 
